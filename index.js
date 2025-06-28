@@ -32,3 +32,15 @@ function getHumanChoice() {
     }
 }
 
+for (let i = 1; i<=3; i++) {
+    let computerChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
+    if (humanChoice == computerChoice){
+        humanScore++;
+    }
+    else {
+        computerScore++;
+    }
+}
+
+alert(`You have won ${humanScore} times\nComputer has won ${computerScore} times.`)
