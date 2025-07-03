@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let totalChances = 3;
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
@@ -18,7 +19,7 @@ function getComputerChoice() {
 
 
 function getHumanChoice() {
-    const message = "1. Rock\n2. Paper\n3. Scissors\n\n";
+    const message = `1. Rock\n2. Paper\n3. Scissors\n\nYou have ${totalChances} chances left!`;
     let choice = Number(prompt(`${message}Select one of the above: `));
     switch (choice){
         case 1:
@@ -41,6 +42,7 @@ for (let i = 1; i<=3; i++) {
     else {
         computerScore++;
     }
+    totalChances--;
 }
 
 alert(`You have won ${humanScore} times\nComputer has won ${computerScore} times.`)
